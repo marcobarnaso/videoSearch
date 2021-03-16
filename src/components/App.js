@@ -31,9 +31,9 @@ const App = () => {
     setSelectedVideo(items[0]);
   };
 
-  const onVideoSelect = (video) => {
-    setSelectedVideo(video);
-  };
+  // const onVideoSelect = (video) => { // we were providing this function to VideoList component to pass the video to setSelected video
+  //   setSelectedVideo(video); // but we could just use setSelectedVideo and it will work the same
+  // };
 
   return (
     <div>
@@ -45,7 +45,7 @@ const App = () => {
               <VideoDetail video={selectedVideo} />
             </div>
             <div className="five wide column">
-              <VideoList videos={videos} onVideoSelect={onVideoSelect} />
+              <VideoList videos={videos} onVideoSelect={setSelectedVideo} />
             </div>
           </div>
         </div>
